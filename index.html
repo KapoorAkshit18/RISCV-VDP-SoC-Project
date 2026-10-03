@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>RISC-V SoC with Lightweight TPU Accelerator</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -38,7 +41,7 @@
 
         header {
             border-bottom: 1px solid #e5e7eb;
-            background: rgba(255, 255, 255, 0.96);
+            background: #ffffff;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -197,27 +200,27 @@
             margin-bottom: 0;
         }
 
-        /* ================= ARCHITECTURE ================= */
+        /* ================= FIGURES ================= */
 
-        .architecture {
-            margin: 30px 0;
-            padding: 28px;
+        .figure-box {
+            margin: 32px 0;
+            padding: 24px;
             background: #f8fafc;
             border: 1px solid #e5e7eb;
             border-radius: 10px;
             text-align: center;
         }
 
-        .architecture-image {
-            width: 100%;
-            max-width: 1050px;
-            height: auto;
+        .figure-box img {
             display: block;
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
             margin: 0 auto;
             border-radius: 6px;
         }
 
-        .architecture-image.formal {
+        .figure-box.formal img {
             max-width: 900px;
         }
 
@@ -226,7 +229,6 @@
             color: #6b7280;
             font-size: 13px;
             font-style: italic;
-            text-align: center;
         }
 
         /* ================= TABLES ================= */
@@ -296,13 +298,13 @@
             color: #1d4ed8;
         }
 
-        /* ================= METRIC ================= */
+        /* ================= PERFORMANCE ================= */
 
         .metric-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-            margin-top: 28px;
+            margin-top: 30px;
         }
 
         .metric {
@@ -315,7 +317,7 @@
 
         .metric-value {
             display: block;
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
             color: #2563eb;
             margin-bottom: 5px;
@@ -357,15 +359,19 @@
                 padding: 45px 20px;
             }
 
-            .architecture {
-                padding: 15px;
+            .figure-box {
+                padding: 12px;
             }
+
         }
+
     </style>
+
 </head>
 
 
 <body>
+
 
 <header>
 
@@ -382,6 +388,7 @@
             <a href="#verification">Verification</a>
             <a href="#formal">Formal</a>
             <a href="#performance">Results</a>
+            <a href="#future">Future Scope</a>
         </nav>
 
     </div>
@@ -391,12 +398,13 @@
 
 <main>
 
+
     <!-- ================= HERO ================= -->
 
     <div class="hero">
 
         <span class="tag">
-            RTL • RISC-V • UVM • FPGA • Formal Verification
+            RTL • RISC-V • UVM • Neural Accelerator • Formal Verification
         </span>
 
         <h1>
@@ -405,8 +413,9 @@
 
         <p>
             A synthesizable RISC-V based System-on-Chip integrating a
-            lightweight neural-network accelerator, memory-mapped peripherals,
-            UVM-based verification, and formal protocol verification.
+            lightweight neural-network accelerator with memory-mapped
+            control, AXI4-Stream data transfer, UVM-based verification,
+            reference modeling, and formal protocol verification.
         </p>
 
         <div class="buttons">
@@ -437,11 +446,11 @@
         <h2>Overview</h2>
 
         <p class="section-intro">
-            This project explores the integration of a lightweight neural
-            processing accelerator into a RISC-V based SoC. The system combines
-            processor-based execution with hardware acceleration while focusing
-            on processor–accelerator communication, fixed-point computation,
-            verification, and FPGA implementation.
+            This project investigates the integration of a lightweight
+            neural-network accelerator into a RISC-V SoC. The design combines
+            processor-based execution with hardware acceleration and focuses
+            on accelerator integration, fixed-point computation,
+            processor–accelerator communication, and verification.
         </p>
 
 
@@ -452,7 +461,7 @@
                 <h3>RISC-V SoC</h3>
 
                 <p>
-                    PicoRV32 based single-master SoC with memory-mapped RAM
+                    PicoRV32-based single-master SoC with memory-mapped RAM
                     and peripheral interfaces.
                 </p>
 
@@ -464,8 +473,8 @@
                 <h3>TPU Accelerator</h3>
 
                 <p>
-                    Lightweight neural-network accelerator using a 4×4
-                    systolic processing-element array and fixed-point
+                    Lightweight neural-network accelerator based on a 4×4
+                    systolic processing-element structure and fixed-point
                     arithmetic.
                 </p>
 
@@ -477,9 +486,9 @@
                 <h3>Verification</h3>
 
                 <p>
-                    SystemVerilog/UVM verification combined with reference
-                    modeling, functional coverage, assertions, and formal
-                    verification.
+                    SystemVerilog/UVM verification with reference modeling,
+                    scoreboarding, functional coverage, assertions, and
+                    formal verification.
                 </p>
 
             </div>
@@ -489,25 +498,30 @@
     </section>
 
 
-    <!-- ================= SYSTEM ARCHITECTURE ================= -->
+    <!-- ================= ARCHITECTURE ================= -->
 
     <section id="architecture">
 
         <h2>System Architecture</h2>
 
         <p class="section-intro">
-            The SoC uses a single-master memory-mapped architecture. The
-            PicoRV32 processor communicates with RAM and peripherals through
+            The SoC uses a single-master memory-mapped architecture.
+            PicoRV32 communicates with RAM and peripheral blocks through
             a deterministic native interconnect.
         </p>
 
 
-        <div class="architecture">
+        <div class="figure-box">
 
             <img
-                src="assets/system_architecture.png"
+                src="./assets/system_architecture.png"
                 alt="RISC-V SoC System Architecture"
-                class="architecture-image">
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+            <div class="image-error">
+                System architecture image could not be loaded.
+            </div>
 
             <div class="caption">
                 Figure 1 — RISC-V SoC system architecture
@@ -560,8 +574,8 @@
 
                     <tr>
                         <td>0x0001_3000 – 0x0001_3FFF</td>
-                        <td>TPU / VDP</td>
-                        <td>Accelerator / display peripheral window</td>
+                        <td>TPU</td>
+                        <td>Neural accelerator control window</td>
                     </tr>
 
                 </tbody>
@@ -588,7 +602,7 @@
 
         <div class="highlight">
 
-            <strong>Accelerator datapath:</strong>
+            <strong>Accelerator data path:</strong>
 
             MMIO configuration →
             AXI4-Stream payload generation →
@@ -611,15 +625,10 @@
         <ul>
 
             <li>Signed 16-bit operands</li>
-
             <li>32-bit multiplication</li>
-
             <li>Arithmetic shift by 10 bits</li>
-
             <li>16-bit wrap-around arithmetic</li>
-
             <li>No rounding</li>
-
             <li>No saturation</li>
 
         </ul>
@@ -629,9 +638,9 @@
 
         <p>
             The TPU receives neural-network payload data through an
-            AXI4-Stream interface. The memory-mapped wrapper provides the
-            processor-visible control and payload registers, while the
-            streaming master transfers the configured data toward the neural
+            AXI4-Stream interface. A memory-mapped wrapper exposes the
+            processor-visible configuration and payload registers, while
+            the streaming interface transfers the configured data to the
             accelerator.
         </p>
 
@@ -640,8 +649,8 @@
 
         <p>
             The accelerator uses a 256-entry sigmoid lookup table with
-            Q6.10 output representation. The RTL lookup table is treated as
-            the authoritative source for the software reference model,
+            Q6.10 output representation. The RTL lookup table is treated
+            as the authoritative source for the software reference model,
             ensuring that simulation comparisons reproduce the implemented
             hardware behavior.
         </p>
@@ -656,9 +665,9 @@
         <h2>Processor–Accelerator Communication</h2>
 
         <p class="section-intro">
-            Processor-to-accelerator communication was evaluated separately
-            from the neural computation to quantify the overhead introduced
-            by data movement and interface handshaking.
+            Processor-to-accelerator communication was analyzed separately
+            from neural computation to quantify the overhead introduced by
+            data movement and interface handshaking.
         </p>
 
 
@@ -681,8 +690,8 @@
                 <h3>AXI4-Stream</h3>
 
                 <p>
-                    Payload transfer uses VALID, READY and TLAST handshake
-                    semantics.
+                    Payload transfer uses VALID, READY, and TLAST
+                    handshake semantics.
                 </p>
 
             </div>
@@ -693,7 +702,7 @@
                 <h3>Control Status</h3>
 
                 <p>
-                    Accelerator control includes START, BUSY and DONE
+                    Accelerator control includes START, BUSY, and DONE
                     behavior.
                 </p>
 
@@ -711,18 +720,23 @@
         <h2>UVM Verification</h2>
 
         <p class="section-intro">
-            The SoC was verified using a SystemVerilog/UVM environment with
-            transaction-level stimulus, monitoring, scoreboarding,
-            reference modeling, and functional coverage.
+            The SoC was verified using a SystemVerilog/UVM environment
+            incorporating transaction-level stimulus, monitoring,
+            scoreboarding, reference modeling, and functional coverage.
         </p>
 
 
-        <div class="architecture">
+        <div class="figure-box">
 
             <img
-                src="assets/uvm_architecture.png"
+                src="./assets/uvm_architecture.png"
                 alt="UVM Verification Architecture"
-                class="architecture-image">
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+            <div class="image-error">
+                UVM architecture image could not be loaded.
+            </div>
 
             <div class="caption">
                 Figure 2 — UVM verification architecture
@@ -751,10 +765,10 @@
         <h3>Scoreboard</h3>
 
         <p>
-            The scoreboard compares DUT transactions against expected results
-            generated by the reference model. Debugging included resolving
-            mismatches involving payload mapping, timing assumptions, and
-            reference-model behavior.
+            The scoreboard compares DUT transactions against expected
+            results generated by the reference model. Verification debugging
+            included resolving payload mapping, timing assumptions, and
+            reference-model mismatches.
         </p>
 
     </section>
@@ -768,17 +782,22 @@
 
         <p class="section-intro">
             Formal verification was used to check accelerator streaming
-            protocol and control behavior independently from large neural
-            datapath state spaces.
+            protocol and control behavior while avoiding the state-space
+            complexity of the complete neural datapath.
         </p>
 
 
-        <div class="architecture">
+        <div class="figure-box formal">
 
             <img
-                src="assets/formal_architecture.png"
+                src="./assets/formal_architecture.png"
                 alt="Formal Verification Architecture"
-                class="architecture-image formal">
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+            <div class="image-error">
+                Formal architecture image could not be loaded.
+            </div>
 
             <div class="caption">
                 Figure 3 — Formal verification architecture and property
@@ -855,8 +874,9 @@
 
         <div class="highlight">
 
-            The TPU streaming protocol was isolated using dedicated formal
-            checkers, while START-control verification was moved to a smaller
+            <strong>Verification approach:</strong>
+            TPU streaming behavior was isolated using dedicated protocol
+            checkers, while START-control behavior was analyzed at a smaller
             control boundary.
 
         </div>
@@ -871,9 +891,8 @@
         <h2>Performance</h2>
 
         <p class="section-intro">
-            The accelerator was evaluated against the software execution path
-            to quantify acceleration and processor–accelerator communication
-            overhead.
+            The accelerator was evaluated against the software-only RISC-V
+            execution path using the same sigmoid workload.
         </p>
 
 
@@ -882,42 +901,98 @@
             <div class="metric">
 
                 <span class="metric-value">
+                    1343
+                </span>
+
+                <span class="metric-label">
+                    Software-only cycles
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span class="metric-value">
+                    372
+                </span>
+
+                <span class="metric-label">
+                    TPU-accelerated cycles
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span class="metric-value">
                     3.6×
                 </span>
 
                 <span class="metric-label">
-                    Measured accelerator speedup
-                </span>
-
-            </div>
-
-
-            <div class="metric">
-
-                <span class="metric-value">
-                    590
-                </span>
-
-                <span class="metric-label">
-                    Total TPU transaction cycles
-                </span>
-
-            </div>
-
-
-            <div class="metric">
-
-                <span class="metric-value">
-                    500
-                </span>
-
-                <span class="metric-label">
-                    Neural computation cycles
+                    Measured speedup
                 </span>
 
             </div>
 
         </div>
+
+
+        <h3>Software vs. TPU</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Execution Method</th>
+                        <th>Cycles</th>
+                        <th>Result</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Software-only RISC-V</td>
+                        <td><strong>1343</strong></td>
+                        <td>Baseline</td>
+                    </tr>
+
+                    <tr>
+                        <td>RISC-V + TPU</td>
+                        <td><strong>372</strong></td>
+                        <td><strong>3.6× speedup</strong></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <strong>Measured acceleration:</strong>
+            The TPU reduces the measured sigmoid workload from
+            <strong>1343 cycles to 372 cycles</strong>, corresponding to
+            approximately <strong>3.6× acceleration</strong> over the
+            software-only implementation.
+
+        </div>
+
+
+        <h3>TPU Transaction Breakdown</h3>
+
+        <p>
+            The accelerator transaction was additionally decomposed into
+            communication and computation stages.
+        </p>
 
 
         <div class="table-wrapper">
@@ -927,8 +1002,8 @@
                 <thead>
 
                     <tr>
-                        <th>Metric</th>
-                        <th>Measured Result</th>
+                        <th>Stage</th>
+                        <th>Cycles</th>
                     </tr>
 
                 </thead>
@@ -936,28 +1011,23 @@
                 <tbody>
 
                     <tr>
-                        <td>Total TPU transaction latency</td>
-                        <td>590 cycles</td>
+                        <td>TX / AXI4-Stream transfer</td>
+                        <td>70</td>
                     </tr>
 
                     <tr>
-                        <td>TX time</td>
-                        <td>70 cycles</td>
+                        <td>TPU computation</td>
+                        <td>500</td>
                     </tr>
 
                     <tr>
-                        <td>Neural computation</td>
-                        <td>500 cycles</td>
+                        <td>RX</td>
+                        <td>20</td>
                     </tr>
 
                     <tr>
-                        <td>RX time</td>
-                        <td>20 cycles</td>
-                    </tr>
-
-                    <tr>
-                        <td>Measured accelerator speedup</td>
-                        <td><strong>3.6×</strong></td>
+                        <td><strong>Total transaction latency</strong></td>
+                        <td><strong>590</strong></td>
                     </tr>
 
                 </tbody>
@@ -966,14 +1036,22 @@
 
         </div>
 
+
+        <p>
+            The 590-cycle transaction measurement is reported separately from
+            the 1343-cycle versus 372-cycle end-to-end workload comparison,
+            since the two measurements represent different observation
+            boundaries.
+        </p>
+
     </section>
 
 
-    <!-- ================= IMPLEMENTATION ================= -->
+    <!-- ================= TOOLS ================= -->
 
     <section>
 
-        <h2>Implementation</h2>
+        <h2>Tools & Technologies</h2>
 
         <div class="cards">
 
@@ -982,7 +1060,7 @@
                 <h3>RTL / Hardware</h3>
 
                 <p>
-                    Verilog, SystemVerilog, RISC-V, FPGA and Vivado.
+                    Verilog, SystemVerilog and RISC-V.
                 </p>
 
             </div>
@@ -990,22 +1068,10 @@
 
             <div class="card">
 
-                <h3>Simulation</h3>
+                <h3>Verification</h3>
 
                 <p>
-                    QuestaSim, VCS, Verdi and DVE for simulation and debug.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>UVM</h3>
-
-                <p>
-                    UVM agents, sequences, monitors, scoreboards and
-                    functional coverage.
+                    SystemVerilog, UVM, SVA, QuestaSim, VCS, Verdi and DVE.
                 </p>
 
             </div>
@@ -1027,7 +1093,7 @@
                 <h3>Software</h3>
 
                 <p>
-                    RISC-V firmware and C-based TPU reference modeling.
+                    RISC-V firmware and C-based reference modeling.
                 </p>
 
             </div>
@@ -1035,10 +1101,91 @@
 
             <div class="card">
 
-                <h3>FPGA</h3>
+                <h3>Neural Accelerator</h3>
 
                 <p>
-                    Xilinx Zynq-7000 / ZedBoard implementation using Vivado.
+                    AXI4-Stream, fixed-point arithmetic, systolic dataflow
+                    and sigmoid LUT implementation.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Development</h3>
+
+                <p>
+                    Git, GitHub and automated verification workflows.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FUTURE SCOPE ================= -->
+
+    <section id="future">
+
+        <h2>Future Scope</h2>
+
+        <p class="section-intro">
+            The current work establishes the RTL, accelerator integration,
+            verification, and performance-analysis foundation. The following
+            extensions are planned for future development.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>FPGA Implementation</h3>
+
+                <p>
+                    Deploy and evaluate the complete SoC and TPU accelerator
+                    on a Xilinx Zynq-7000 / ZedBoard platform and measure
+                    hardware resource utilization and operating frequency.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Hardware Performance</h3>
+
+                <p>
+                    Measure real hardware latency, throughput, power, and
+                    energy efficiency in addition to simulation-based cycle
+                    measurements.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Accelerator Expansion</h3>
+
+                <p>
+                    Extend the accelerator toward larger neural-network
+                    workloads and additional layer types.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Verification Expansion</h3>
+
+                <p>
+                    Increase functional coverage and extend formal properties
+                    across additional SoC and accelerator interfaces.
                 </p>
 
             </div>
@@ -1108,13 +1255,17 @@
 
     </section>
 
+
 </main>
 
 
 <footer>
+
     RISC-V SoC with Lightweight TPU Accelerator · Hardware Design & Verification
+
 </footer>
 
 
 </body>
+
 </html>
