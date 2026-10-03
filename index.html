@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +35,11 @@
             text-decoration: underline;
         }
 
-        /* ---------- Header ---------- */
+        /* ================= HEADER ================= */
 
         header {
             border-bottom: 1px solid #e5e7eb;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.96);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -70,7 +71,7 @@
             text-decoration: none;
         }
 
-        /* ---------- Main ---------- */
+        /* ================= MAIN ================= */
 
         main {
             max-width: 1100px;
@@ -78,9 +79,11 @@
             padding: 70px 24px;
         }
 
+        /* ================= HERO ================= */
+
         .hero {
-            padding: 40px 0 70px;
-            max-width: 850px;
+            padding: 35px 0 75px;
+            max-width: 900px;
         }
 
         .tag {
@@ -106,7 +109,7 @@
         .hero p {
             font-size: 18px;
             color: #4b5563;
-            max-width: 780px;
+            max-width: 820px;
         }
 
         .buttons {
@@ -139,15 +142,16 @@
             text-decoration: none;
         }
 
-        /* ---------- Sections ---------- */
+        /* ================= SECTIONS ================= */
 
         section {
-            padding: 55px 0;
+            padding: 58px 0;
             border-top: 1px solid #e5e7eb;
         }
 
         h2 {
             font-size: 30px;
+            line-height: 1.3;
             color: #111827;
             margin-bottom: 18px;
         }
@@ -155,7 +159,7 @@
         h3 {
             font-size: 20px;
             color: #111827;
-            margin: 25px 0 10px;
+            margin: 28px 0 10px;
         }
 
         p {
@@ -163,11 +167,11 @@
         }
 
         .section-intro {
-            max-width: 800px;
+            max-width: 820px;
             color: #4b5563;
         }
 
-        /* ---------- Cards ---------- */
+        /* ================= CARDS ================= */
 
         .cards {
             display: grid;
@@ -191,50 +195,42 @@
         .card p {
             color: #6b7280;
             font-size: 14px;
+            margin-bottom: 0;
         }
 
-        /* ---------- Architecture ---------- */
+        /* ================= ARCHITECTURE ================= */
 
         .architecture {
             margin: 30px 0;
-            padding: 30px;
+            padding: 28px;
             background: #f8fafc;
             border: 1px solid #e5e7eb;
             border-radius: 10px;
             text-align: center;
         }
 
-        .architecture-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 15px 0;
+        .architecture-image {
+            width: 100%;
+            max-width: 1050px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
         }
 
-        .block {
-            padding: 16px 20px;
-            background: white;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-weight: 600;
-            min-width: 150px;
-        }
-
-        .arrow {
-            color: #64748b;
-            font-size: 24px;
+        .architecture-image.formal {
+            max-width: 900px;
         }
 
         .caption {
-            margin-top: 12px;
+            margin-top: 16px;
             color: #6b7280;
             font-size: 13px;
             font-style: italic;
+            text-align: center;
         }
 
-        /* ---------- Tables ---------- */
+        /* ================= TABLES ================= */
 
         .table-wrapper {
             overflow-x: auto;
@@ -260,7 +256,7 @@
             font-weight: 600;
         }
 
-        /* ---------- Code ---------- */
+        /* ================= CODE ================= */
 
         pre {
             background: #f8fafc;
@@ -274,9 +270,10 @@
         code {
             font-family: Consolas, "Courier New", monospace;
             font-size: 13px;
+            color: #1f2937;
         }
 
-        /* ---------- Lists ---------- */
+        /* ================= LISTS ================= */
 
         ul {
             margin: 15px 0 15px 22px;
@@ -286,7 +283,7 @@
             margin-bottom: 7px;
         }
 
-        /* ---------- Highlight ---------- */
+        /* ================= HIGHLIGHT ================= */
 
         .highlight {
             border-left: 4px solid #2563eb;
@@ -300,7 +297,37 @@
             color: #1d4ed8;
         }
 
-        /* ---------- Footer ---------- */
+        /* ================= METRIC ================= */
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .metric {
+            border: 1px solid #e5e7eb;
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 30px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* ================= FOOTER ================= */
 
         footer {
             border-top: 1px solid #e5e7eb;
@@ -310,7 +337,7 @@
             font-size: 13px;
         }
 
-        /* ---------- Mobile ---------- */
+        /* ================= MOBILE ================= */
 
         @media (max-width: 800px) {
 
@@ -318,7 +345,8 @@
                 font-size: 36px;
             }
 
-            .cards {
+            .cards,
+            .metric-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -326,22 +354,27 @@
                 display: none;
             }
 
-            .architecture-flow {
-                flex-direction: column;
+            main {
+                padding: 45px 20px;
             }
 
-            .arrow {
-                transform: rotate(90deg);
+            .architecture {
+                padding: 15px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
 <header>
+
     <div class="nav">
-        <div class="logo">RISC-V SoC / TPU</div>
+
+        <div class="logo">
+            RISC-V SoC / TPU
+        </div>
 
         <nav>
             <a href="#overview">Overview</a>
@@ -351,17 +384,21 @@
             <a href="#formal">Formal</a>
             <a href="#performance">Results</a>
         </nav>
+
     </div>
+
 </header>
 
 
 <main>
 
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
 
     <div class="hero">
 
-        <span class="tag">RTL • RISC-V • UVM • FPGA • Formal Verification</span>
+        <span class="tag">
+            RTL • RISC-V • UVM • FPGA • Formal Verification
+        </span>
 
         <h1>
             RISC-V SoC with a Lightweight TPU Accelerator
@@ -374,5 +411,712 @@
         </p>
 
         <div class="buttons">
-            <a class="button primary"
-               href="https://github.com/KapoorAkshit18/RISCV-VDP-
+
+            <a
+                class="button primary"
+                href="https://github.com/KapoorAkshit18/RISCV-VDP-SoC"
+                target="_blank">
+                View Source Repository
+            </a>
+
+            <a
+                class="button secondary"
+                href="https://github.com/KapoorAkshit18/RISCV-VDP-SoC-Project"
+                target="_blank">
+                Project Repository
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= OVERVIEW ================= -->
+
+    <section id="overview">
+
+        <h2>Overview</h2>
+
+        <p class="section-intro">
+            This project explores the integration of a lightweight neural
+            processing accelerator into a RISC-V based SoC. The system combines
+            processor-based execution with hardware acceleration while focusing
+            on processor–accelerator communication, fixed-point computation,
+            verification, and FPGA implementation.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>RISC-V SoC</h3>
+
+                <p>
+                    PicoRV32 based single-master SoC with memory-mapped RAM
+                    and peripheral interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>TPU Accelerator</h3>
+
+                <p>
+                    Lightweight neural-network accelerator using a 4×4
+                    systolic processing-element array and fixed-point
+                    arithmetic.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Verification</h3>
+
+                <p>
+                    SystemVerilog/UVM verification combined with reference
+                    modeling, functional coverage, assertions, and formal
+                    verification.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SYSTEM ARCHITECTURE ================= -->
+
+    <section id="architecture">
+
+        <h2>System Architecture</h2>
+
+        <p class="section-intro">
+            The SoC uses a single-master memory-mapped architecture. The
+            PicoRV32 processor communicates with RAM and peripherals through
+            a deterministic native interconnect.
+        </p>
+
+
+        <div class="architecture">
+
+            <img
+                src="assets/system_architecture.png"
+                alt="RISC-V SoC System Architecture"
+                class="architecture-image">
+
+            <div class="caption">
+                Figure 1 — RISC-V SoC system architecture
+            </div>
+
+        </div>
+
+
+        <h3>Memory Map</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Address Range</th>
+                        <th>Peripheral</th>
+                        <th>Description</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>0x0000_0000 – 0x0000_FFFF</td>
+                        <td>RAM</td>
+                        <td>64 KB instruction/data memory</td>
+                    </tr>
+
+                    <tr>
+                        <td>0x0001_0000 – 0x0001_0FFF</td>
+                        <td>GPIO</td>
+                        <td>General-purpose I/O</td>
+                    </tr>
+
+                    <tr>
+                        <td>0x0001_1000 – 0x0001_1FFF</td>
+                        <td>RF</td>
+                        <td>RF telemetry interface</td>
+                    </tr>
+
+                    <tr>
+                        <td>0x0001_2000 – 0x0001_2FFF</td>
+                        <td>Sensor</td>
+                        <td>Sensor status / telemetry</td>
+                    </tr>
+
+                    <tr>
+                        <td>0x0001_3000 – 0x0001_3FFF</td>
+                        <td>TPU / VDP</td>
+                        <td>Accelerator / display peripheral window</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TPU ================= -->
+
+    <section id="tpu">
+
+        <h2>TPU Accelerator</h2>
+
+        <p class="section-intro">
+            The neural accelerator implements a compact fixed-point datapath
+            using a 4×4 systolic processing-element structure. Activations
+            propagate horizontally while partial sums propagate vertically.
+        </p>
+
+
+        <div class="highlight">
+
+            <strong>Accelerator datapath:</strong>
+
+            MMIO configuration →
+            AXI4-Stream payload generation →
+            4×4 systolic computation →
+            sigmoid lookup →
+            output
+
+        </div>
+
+
+        <h3>Processing Element</h3>
+
+        <p>
+            Each processing element performs the following fixed-point
+            multiply-accumulate operation:
+        </p>
+
+        <pre><code>y_out = y_in + ((a_in × b) >> 10)</code></pre>
+
+        <ul>
+
+            <li>Signed 16-bit operands</li>
+
+            <li>32-bit multiplication</li>
+
+            <li>Arithmetic shift by 10 bits</li>
+
+            <li>16-bit wrap-around arithmetic</li>
+
+            <li>No rounding</li>
+
+            <li>No saturation</li>
+
+        </ul>
+
+
+        <h3>Data Movement</h3>
+
+        <p>
+            The TPU receives neural-network payload data through an
+            AXI4-Stream interface. The memory-mapped wrapper provides the
+            processor-visible control and payload registers, while the
+            streaming master transfers the configured data toward the neural
+            accelerator.
+        </p>
+
+
+        <h3>Sigmoid Lookup Table</h3>
+
+        <p>
+            The accelerator uses a 256-entry sigmoid lookup table with
+            Q6.10 output representation. The RTL lookup table is treated as
+            the authoritative source for the software reference model,
+            ensuring that simulation comparisons reproduce the implemented
+            hardware behavior.
+        </p>
+
+    </section>
+
+
+    <!-- ================= COMMUNICATION ================= -->
+
+    <section>
+
+        <h2>Processor–Accelerator Communication</h2>
+
+        <p class="section-intro">
+            Processor-to-accelerator communication was evaluated separately
+            from the neural computation to quantify the overhead introduced
+            by data movement and interface handshaking.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>MMIO Control</h3>
+
+                <p>
+                    Software configures the accelerator through registers
+                    exposed in the SoC memory map.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>AXI4-Stream</h3>
+
+                <p>
+                    Payload transfer uses VALID, READY and TLAST handshake
+                    semantics.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Control Status</h3>
+
+                <p>
+                    Accelerator control includes START, BUSY and DONE
+                    behavior.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= UVM ================= -->
+
+    <section id="verification">
+
+        <h2>UVM Verification</h2>
+
+        <p class="section-intro">
+            The SoC was verified using a SystemVerilog/UVM environment with
+            transaction-level stimulus, monitoring, scoreboarding,
+            reference modeling, and functional coverage.
+        </p>
+
+
+        <div class="architecture">
+
+            <img
+                src="assets/uvm_architecture.png"
+                alt="UVM Verification Architecture"
+                class="architecture-image">
+
+            <div class="caption">
+                Figure 2 — UVM verification architecture
+            </div>
+
+        </div>
+
+
+        <h3>Reference Model</h3>
+
+        <p>
+            A cycle-independent C reference model was developed to reproduce
+            the TPU's fixed-point computation, data mapping, systolic
+            accumulation, and RTL sigmoid lookup behavior.
+        </p>
+
+
+        <div class="highlight">
+
+            <strong>Reference model validation:</strong>
+            15 tests passed, 0 failed.
+
+        </div>
+
+
+        <h3>Scoreboard</h3>
+
+        <p>
+            The scoreboard compares DUT transactions against expected results
+            generated by the reference model. Debugging included resolving
+            mismatches involving payload mapping, timing assumptions, and
+            reference-model behavior.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FORMAL ================= -->
+
+    <section id="formal">
+
+        <h2>Formal Verification</h2>
+
+        <p class="section-intro">
+            Formal verification was used to check accelerator streaming
+            protocol and control behavior independently from large neural
+            datapath state spaces.
+        </p>
+
+
+        <div class="architecture">
+
+            <img
+                src="assets/formal_architecture.png"
+                alt="Formal Verification Architecture"
+                class="architecture-image formal">
+
+            <div class="caption">
+                Figure 3 — Formal verification architecture and property
+                boundaries
+            </div>
+
+        </div>
+
+
+        <h3>Verified Properties</h3>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Property</th>
+                        <th>Behavior</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>TPU_P01</td>
+                        <td>VALID stability</td>
+                    </tr>
+
+                    <tr>
+                        <td>TPU_P02</td>
+                        <td>Payload stability</td>
+                    </tr>
+
+                    <tr>
+                        <td>TPU_P03</td>
+                        <td>Transfer qualification</td>
+                    </tr>
+
+                    <tr>
+                        <td>TPU_P04</td>
+                        <td>TLAST behavior</td>
+                    </tr>
+
+                    <tr>
+                        <td>TPU_P05</td>
+                        <td>START control behavior</td>
+                    </tr>
+
+                    <tr>
+                        <td>TPU_P06</td>
+                        <td>BUSY / DONE behavior</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <h3>Formal Boundary Decomposition</h3>
+
+        <p>
+            Large datapath multiplexers created a significant SMT state-space
+            bottleneck during full-design formal analysis. The verification
+            boundary was therefore decomposed so that protocol and control
+            properties could be analyzed independently from the large neural
+            datapath.
+        </p>
+
+
+        <div class="highlight">
+
+            The TPU streaming protocol was isolated using dedicated formal
+            checkers, while START-control verification was moved to a smaller
+            control boundary.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PERFORMANCE ================= -->
+
+    <section id="performance">
+
+        <h2>Performance</h2>
+
+        <p class="section-intro">
+            The accelerator was evaluated against the software execution path
+            to quantify acceleration and processor–accelerator communication
+            overhead.
+        </p>
+
+
+        <div class="metric-grid">
+
+            <div class="metric">
+
+                <span class="metric-value">
+                    3.6×
+                </span>
+
+                <span class="metric-label">
+                    Measured accelerator speedup
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span class="metric-value">
+                    590
+                </span>
+
+                <span class="metric-label">
+                    Total TPU transaction cycles
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <span class="metric-value">
+                    500
+                </span>
+
+                <span class="metric-label">
+                    Neural computation cycles
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Metric</th>
+                        <th>Measured Result</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Total TPU transaction latency</td>
+                        <td>590 cycles</td>
+                    </tr>
+
+                    <tr>
+                        <td>TX time</td>
+                        <td>70 cycles</td>
+                    </tr>
+
+                    <tr>
+                        <td>Neural computation</td>
+                        <td>500 cycles</td>
+                    </tr>
+
+                    <tr>
+                        <td>RX time</td>
+                        <td>20 cycles</td>
+                    </tr>
+
+                    <tr>
+                        <td>Measured accelerator speedup</td>
+                        <td><strong>3.6×</strong></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= IMPLEMENTATION ================= -->
+
+    <section>
+
+        <h2>Implementation</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>RTL / Hardware</h3>
+
+                <p>
+                    Verilog, SystemVerilog, RISC-V, FPGA and Vivado.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Simulation</h3>
+
+                <p>
+                    QuestaSim, VCS, Verdi and DVE for simulation and debug.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>UVM</h3>
+
+                <p>
+                    UVM agents, sequences, monitors, scoreboards and
+                    functional coverage.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Formal</h3>
+
+                <p>
+                    SymbiYosys, Yosys, SMTBMC and Z3.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Software</h3>
+
+                <p>
+                    RISC-V firmware and C-based TPU reference modeling.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>FPGA</h3>
+
+                <p>
+                    Xilinx Zynq-7000 / ZedBoard implementation using Vivado.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECT STRUCTURE ================= -->
+
+    <section>
+
+        <h2>Project Structure</h2>
+
+        <pre><code>RISCV-VDP-SoC/
+│
+├── rtl/
+│   ├── cpu/
+│   ├── interconnect/
+│   ├── peripherals/
+│   └── tpu/
+│
+├── firmware/
+│
+├── tb/
+│   ├── directed/
+│   └── tpu/
+│
+├── uvm/
+│   ├── agents/
+│   ├── sequences/
+│   ├── scoreboard/
+│   └── tests/
+│
+├── formal/
+│   ├── properties/
+│   └── wrappers/
+│
+└── docs/
+</code></pre>
+
+    </section>
+
+
+    <!-- ================= REPOSITORIES ================= -->
+
+    <section>
+
+        <h2>Repositories</h2>
+
+        <p>
+            <a
+                href="https://github.com/KapoorAkshit18/RISCV-VDP-SoC"
+                target="_blank">
+                Main RTL / SoC Repository →
+            </a>
+        </p>
+
+        <p>
+            <a
+                href="https://github.com/KapoorAkshit18/RISCV-VDP-SoC-Project"
+                target="_blank">
+                Project Documentation Repository →
+            </a>
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    RISC-V SoC with Lightweight TPU Accelerator · Hardware Design & Verification
+</footer>
+
+
+</body>
+</html>
+```
